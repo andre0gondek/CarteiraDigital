@@ -39,6 +39,11 @@ android {
 
 dependencies {
     implementation("com.google.zxing:core:3.5.4")
+    // Essencial para o Icons.Default
+    implementation("androidx.compose.material:material-icons-core")
+    // Se quiser variações como Icons.Rounded.Add ou Icons.Outlined.Add,
+    // precisará desta:
+    implementation("androidx.compose.material:material-icons-extended")
     implementation(libs.androidx.compose.ui.text.google.fonts)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -48,6 +53,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
