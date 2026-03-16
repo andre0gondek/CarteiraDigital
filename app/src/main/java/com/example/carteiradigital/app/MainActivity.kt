@@ -4,28 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import com.example.carteiradigital.CarteiraDigitalView
-import com.example.carteiradigital.LoginView
-import com.example.carteiradigital.core.designsystem.theme.theme.CarteiraDigitalTheme
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
@@ -33,71 +12,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            CarteiraDigitalTheme {
-                Scaffold(
-                    topBar = {
-                        TopAppBar(
-                            colors = topAppBarColors(
-                                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                                titleContentColor = MaterialTheme.colorScheme.primary,
-                            ),
-                            title = {
-                                Text("Top app bar")
-                            }
-                        )
-                    },
-                    bottomBar = {
-                        BottomAppBar(
-                            containerColor = MaterialTheme.colorScheme.primaryContainer,
-                            contentColor = MaterialTheme.colorScheme.primary,
-                        ) {
-                            Text(
-                                modifier = Modifier
-                                    .fillMaxWidth(),
-                                textAlign = TextAlign.Center,
-                                text = "Bottom app bar",
-                            )
-                        }
-                    },
-                    floatingActionButton = {
-                        FloatingActionButton(onClick = {  }) {
-                            Icon(Icons.Default.Add, contentDescription = "Add")
-                        }
-                    }
-                ) { innerPadding ->
-                    LoginView(
-                        modifier = Modifier
-                            .padding(paddingValues = innerPadding)
-                            .fillMaxSize()
-                    )
-                }
-            }
+            App()
         }
-    }
-}
-
-
-
-@Preview(
-    showBackground = true,
-    showSystemUi = true
-)
-
-@Composable
-fun PreviewCarteirinhaClaro() {
-    CarteiraDigitalTheme(darkTheme = false) {
-        CarteiraDigitalView(modifier = Modifier.padding(16.dp))
-    }
-}
-
-@Preview(
-    showBackground = true,
-    showSystemUi = true
-)
-
-@Composable
-fun PreviewCarteirinhaEscuro() {
-    CarteiraDigitalTheme(darkTheme = true) {
-        CarteiraDigitalView(modifier = Modifier.padding(16.dp))
     }
 }

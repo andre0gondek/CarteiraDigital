@@ -1,4 +1,5 @@
 package com.example.carteiradigital
+/*
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -10,8 +11,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -21,7 +20,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.rafaelcosta.myapplication.QrCode
+import com.example.carteiradigital.feature.carteirinha.presentation.component.LabelText
+import com.example.carteiradigital.feature.carteirinha.presentation.component.QrCode
+import com.example.carteiradigital.feature.carteirinha.presentation.component.ValueText
 
 @Composable
 fun CarteiraDigitalView(modifier: Modifier = Modifier) {
@@ -109,3 +110,4 @@ fun CarteiraDigitalView(modifier: Modifier = Modifier) {
     }
 }
 
+*/

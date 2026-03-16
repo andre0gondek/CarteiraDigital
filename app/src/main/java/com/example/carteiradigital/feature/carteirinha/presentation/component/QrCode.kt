@@ -1,14 +1,13 @@
-package com.rafaelcosta.myapplication
-
-import androidx.compose.foundation.Image
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.asImageBitmap
-import androidx.compose.ui.Modifier
-import androidx.core.graphics.set
-import androidx.core.graphics.createBitmap
+package com.example.carteiradigital.feature.carteirinha.presentation.component
 
 import android.graphics.Bitmap
 import android.graphics.Color
+import androidx.compose.foundation.Image
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.core.graphics.createBitmap
+import androidx.core.graphics.set
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.qrcode.QRCodeWriter

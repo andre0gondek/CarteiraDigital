@@ -1,13 +1,14 @@
-package com.example.carteiradigital
+package com.example.carteiradigital.feature.auth.presentation.screen
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -19,11 +20,18 @@ import androidx.compose.ui.unit.dp
 import com.example.carteiradigital.core.designsystem.theme.theme.CarteiraDigitalTheme
 
 @Composable
-fun LoginView(
-    modifier: Modifier = Modifier
+fun LoginContent(
+    modifier: Modifier = Modifier,
+    login: String = "",
+    senha: String = "",
+    onLoginChange: (String) -> Unit = {},
+    onSenhaChange: (String) -> Unit ={},
+    onLoginClick: () -> Unit = {}
 ){
-    Column (
-        modifier = modifier,
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .safeDrawingPadding(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(
             space = 16.dp,
@@ -31,31 +39,35 @@ fun LoginView(
         )
     ) {
         TextField(
-            value = "",
-            onValueChange = {},
+            value = login,
+            onValueChange = onLoginChange,
             label = {
                 Text("Login")
-            },
+            }
         )
+
         TextField(
-            value = "",
-            onValueChange = {},
+            value = senha,
+            onValueChange = onSenhaChange,
             label = {
                 Text("Senha")
-            },
+            }
         )
-        ElevatedButton(
-            onClick = {},
-            modifier = Modifier
-                .fillMaxWidth(.6f),
-            shape = RoundedCornerShape(size = 10.dp),
+
+        Button(
+            onClick = onLoginClick,
+            modifier = Modifier.fillMaxWidth(0.6f),
+            shape = RoundedCornerShape(size = 9.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.primary
+                containerColor = MaterialTheme.colorScheme.secondary
             ),
+            border = BorderStroke(
+                2.dp,
+                MaterialTheme.colorScheme.secondary
+            )
         ) {
             Text("Entrar")
         }
-
     }
 }
 
@@ -63,15 +75,10 @@ fun LoginView(
     showBackground = true,
     showSystemUi = true
 )
-
 @Composable
-fun PreviewLoginClaro() {
+fun PreviewLoginContentClaro(){
     CarteiraDigitalTheme(darkTheme = false) {
-        LoginView(
-            modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-        )
+        LoginContent()
     }
 }
 
@@ -79,14 +86,9 @@ fun PreviewLoginClaro() {
     showBackground = true,
     showSystemUi = true
 )
-
 @Composable
-fun PreviewLoginEscuro() {
+fun PreviewLoginContentEscuro(){
     CarteiraDigitalTheme(darkTheme = true) {
-        LoginView(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp)
-        )
+        LoginContent()
     }
 }
