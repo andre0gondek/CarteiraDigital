@@ -11,7 +11,7 @@ import androidx.navigation.compose.composable
 import com.example.carteiradigital.feature.auth.presentation.screen.LoginScreen
 import com.example.carteiradigital.feature.carteirinha.presentation.screen.CarteirinhaScreen
 import com.example.carteiradigital.feature.carteirinha.presentation.screen.HomeScreen
-
+import com.example.carteiradigital.feature.unidadecurricular.presentation.screen.UnidadeCurricularScreen // Importação da tela de UCs
 
 @Composable
 fun AppNavHost(
@@ -41,6 +41,13 @@ fun AppNavHost(
                     .fillMaxSize()
                     .padding(16.dp),
                 navController = navController
+            )
+        }
+        // Nova rota implementada
+        composable(Routes.UnidadesCurriculares.route) {
+            UnidadeCurricularScreen(
+                modifier = Modifier.fillMaxSize(),
+                navController = navController // ISSO EVITA O CRASH!
             )
         }
     }

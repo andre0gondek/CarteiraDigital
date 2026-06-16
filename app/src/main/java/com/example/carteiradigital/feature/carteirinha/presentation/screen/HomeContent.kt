@@ -19,12 +19,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.carteiradigital.core.designsystem.theme.theme.CarteiraDigitalTheme // Ajuste se necessário de acordo com seu projeto
+import com.example.carteiradigital.core.designsystem.theme.theme.CarteiraDigitalTheme
 
 @Composable
 fun HomeContent (
     modifier: Modifier = Modifier,
-    onButtonClick: () -> Unit = {}
+    onCarteirinhaClick: () -> Unit = {},
+    onUnidadesCurricularesClick: () -> Unit = {}
 ) {
     Column(
         modifier = modifier.fillMaxSize(),
@@ -40,8 +41,9 @@ fun HomeContent (
 
         Spacer(modifier = Modifier.height(32.dp))
 
+        // Botão 1: Carteirinha Digital
         Button(
-            onClick = onButtonClick,
+            onClick = onCarteirinhaClick,
             modifier = Modifier.fillMaxWidth(0.6f),
             shape = RoundedCornerShape(size = 9.dp),
             colors = ButtonDefaults.buttonColors(
@@ -52,7 +54,25 @@ fun HomeContent (
                 MaterialTheme.colorScheme.secondary
             )
         ) {
-            Text("Ir para Carteirinha")
+            Text("Carteirinha Digital")
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Botão 2: Unidades Curriculares
+        Button(
+            onClick = onUnidadesCurricularesClick,
+            modifier = Modifier.fillMaxWidth(0.6f),
+            shape = RoundedCornerShape(size = 9.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.secondary
+            ),
+            border = BorderStroke(
+                2.dp,
+                MaterialTheme.colorScheme.secondary
+            )
+        ) {
+            Text("Unidades Curriculares")
         }
     }
 }

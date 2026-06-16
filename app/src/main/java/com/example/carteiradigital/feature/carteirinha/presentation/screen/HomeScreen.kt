@@ -18,8 +18,11 @@ fun HomeScreen(
         contentAlignment = Alignment.Center
     ) {
         HomeContent(
-            onButtonClick = {
+            onCarteirinhaClick = {
                 navController.navigate(Routes.Carteirinha.route)
+            },
+            onUnidadesCurricularesClick = {
+                navController.navigate(Routes.UnidadesCurriculares.route)
             },
             modifier = modifier
         )
